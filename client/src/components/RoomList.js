@@ -9,7 +9,7 @@ const RoomList = ({ rooms, checkInDate, checkOutDate }) => {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAddToBag = (room) => {
+  const handleSelect = (room) => {
     navigate('/payment', { state: { room, checkInDate, checkOutDate } });
   };
 
@@ -29,21 +29,25 @@ const RoomList = ({ rooms, checkInDate, checkOutDate }) => {
         <div key={room.id} className="room-card">
           <img src={room.image} alt={room.name} className="room-image" />
           <div className="room-info">
-            <h2>{room.name}</h2>
-            <p>{room.description}</p>
-            <p>Price: ${room.price} per night</p>
-            <button 
-              onClick={() => handleAddToBag(room)} 
-              className="add-to-bag-button"
-            >
-              Add to Bag
-            </button>
-            <button 
-              onClick={() => handleMoreView(room)} 
-              className="more-view-button"
-            >
-              More View
-            </button>
+            <div className="room-details">
+              <h2>{room.name}</h2>
+              <p>{room.description}</p>
+              <p>Price: ${room.price} per night</p>
+              <button 
+                onClick={() => handleMoreView(room)} 
+                className="more-view-button"
+              >
+                More View
+              </button>
+            </div>
+            <div className="room-select">
+              <button 
+                onClick={() => handleSelect(room)} 
+                className="select-button"
+              >
+                Select
+              </button>
+            </div>
           </div>
         </div>
       ))}
