@@ -1,0 +1,37 @@
+.booking-container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .date-selection {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .date-selection label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-button {
+    background-color: #e8b923;
+    color: #000000;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover {
+    background-color: #d1a019;
+  }
+  
+  .available-rooms {
+    margin-top: 2rem;
+  }
+  
